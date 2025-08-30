@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Personality Test — ddededodediamante</title>
 </head>
+
 <body>
   <h1 id="app-title">Personality Test — ddededodediamante</h1>
 
@@ -28,17 +30,16 @@
   </div>
 
   <script>
-    function byId(id){ return document.getElementById(id); }
-
+    function byId(id) { return document.getElementById(id); }
     const CFG = {
       title: "Which ddededodediamante are you?",
       outcomes: [
-        { id: "normal", name: "ddededodediamante", description: "i'm ddededodediamante" },
-        { id: "evil", name: "evil ddededodediamante", description: "oh no evil go away" },
-        { id: "fast", name: "fast ddededodediamante", description: "you are so fast and dodgy" },
-        { id: "woman", name: "ddededodediamantella", description: "woman" },
-        { id: "ququeque", name: "ququequequoquequiamante", description: "so like uhh you are cool" },
-        { id: "joe", name: "Joe", description: "oh my god its joe" }
+        { id: "normal", name: "ddededodediamante", description: "You're ddededodediamante. You often dodge red lava that falls from the sky and collect cats." },
+        { id: "evil", name: "evil ddededodediamante", description: "So evil. Oh No Scary Evil Go Away!" },
+        { id: "fast", name: "fast ddededodediamante", description: "Very fast and dodgy. You feel like you can do a lot of stuff in little time!" },
+        { id: "woman", name: "ddededodediamantella", description: "Woman" },
+        { id: "ququeque", name: "ququequequoquequiamante", description: "So like uhh you are cool" },
+        { id: "joe", name: "Joe", description: "Joe. (Got in a car crash in Joe Simulator 4)" }
       ],
       questions: [
         {
@@ -66,9 +67,9 @@
           text: "A friend asks for help.",
           choices: [
             { label: "help them uwu", effects: { woman: 2, normal: 2 } },
-            { label: "ignore and continue my path", effects: { evil: 3 } },
+            { label: "ignore them", effects: { evil: 2 } },
             { label: "help them, and dont expect anything in return", effects: { fast: 1, joe: 1, ququeque: 1 } },
-            { label: "support them to finish their task", effects: { joe: 1, normal: 1 } }
+            { label: "just give advice", effects: { joe: 1, woman: 1 } }
           ]
         },
         {
@@ -77,7 +78,7 @@
           choices: [
             { label: "reading or speaking", effects: { woman: 2, normal: 1 } },
             { label: "listening", effects: { joe: 2 } },
-            { label: "visually", effects: { fast: 2 } },
+            { label: "visually", effects: { fast: 2, normal: 1 } },
             { label: "a little bit of dat and dat", effects: { ququeque: 2, evil: 1 } }
           ]
         },
@@ -91,20 +92,160 @@
             { label: "i got in a car crash", effects: { joe: 2 } }
           ]
         },
+        {
+          id: "q6",
+          text: "You're walking down the street. You see a cat.",
+          choices: [
+            { label: "pet it gently", effects: { normal: 2, woman: 1 } },
+            { label: "ignore it, I have better things to do", effects: { evil: 2 } },
+            { label: "race it to see who's faster", effects: { fast: 2 } },
+            { label: "draw a picture of it", effects: { ququeque: 2 } }
+          ]
+        },
+        {
+          id: "q7",
+          text: "Pick a snack.",
+          choices: [
+            { label: "chips or candy", effects: { normal: 1, ququeque: 1 } },
+            { label: "mysterious glowing liquid", effects: { evil: 2 } },
+            { label: "energy drink", effects: { fast: 2 } },
+            { label: "fancy chocolate", effects: { woman: 2 } },
+            { label: "whatever fell on the car seat", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q8",
+          text: "Someone challenges you to a game.",
+          choices: [
+            { label: "I'll win, of course", effects: { fast: 2 } },
+            { label: "I'll cheat hehe", effects: { evil: 2 } },
+            { label: "I'll just play for fun", effects: { normal: 2 } },
+            { label: "no thanks, I'll draw instead", effects: { ququeque: 2 } },
+            { label: "sure, but then I'll crash my car again", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q9",
+          text: "Your vibe in one word?",
+          choices: [
+            { label: "calm", effects: { normal: 2 } },
+            { label: "chaotic", effects: { evil: 2 } },
+            { label: "speedy", effects: { fast: 2 } },
+            { label: "stylish", effects: { woman: 2 } },
+            { label: "artsy", effects: { ququeque: 2 } },
+            { label: "joe", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q10",
+          text: "You wake up in the middle of the night. What do you do?",
+          choices: [
+            { label: "go back to sleep peacefully", effects: { normal: 2 } },
+            { label: "plot my next evil plan", effects: { evil: 2 } },
+            { label: "run laps around my room", effects: { fast: 2 } },
+            { label: "scroll on my phone in silence", effects: { woman: 1, joe: 1 } },
+            { label: "sketch something random", effects: { ququeque: 2 } }
+          ]
+        },
+        {
+          id: "q11",
+          text: "A big red button appears. What now?",
+          choices: [
+            { label: "press it carefully", effects: { normal: 1 } },
+            { label: "slam it instantly", effects: { fast: 2 } },
+            { label: "evil laughter, then press", effects: { evil: 3 } },
+            { label: "paint a flower on it", effects: { ququeque: 2 } },
+            { label: "press with my car keys", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q12",
+          text: "Pick a soundtrack for your life.",
+          choices: [
+            { label: "calm piano music", effects: { normal: 2 } },
+            { label: "distorted villain theme", effects: { evil: 2 } },
+            { label: "speedrun background music", effects: { fast: 2 } },
+            { label: "pop song about empowerment", effects: { woman: 2 } },
+            { label: "lofi beats while drawing", effects: { ququeque: 2 } },
+            { label: "car crash sound effects", effects: { joe: 3 } }
+          ]
+        },
+        {
+          id: "q13",
+          text: "Your computer lags. What's your reaction?",
+          choices: [
+            { label: "calmly wait", effects: { normal: 2 } },
+            { label: "rage instantly", effects: { evil: 2 } },
+            { label: "smash every key faster", effects: { fast: 2 } },
+            { label: "roll eyes and go do makeup", effects: { woman: 2 } },
+            { label: "open drawing app instead", effects: { ququeque: 2 } },
+            { label: "blame the car crash", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q14",
+          text: "You get teleported to a random place.",
+          choices: [
+            { label: "cozy library", effects: { normal: 2 } },
+            { label: "volcano base", effects: { evil: 2 } },
+            { label: "race track", effects: { fast: 2 } },
+            { label: "shopping mall", effects: { woman: 2 } },
+            { label: "art museum", effects: { ququeque: 2 } },
+            { label: "middle of a freeway", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q15",
+          text: "Choose a pet.",
+          choices: [
+            { label: "cat", effects: { normal: 2 } },
+            { label: "snake", effects: { evil: 2 } },
+            { label: "cheetah", effects: { fast: 2 } },
+            { label: "tiny fluffy dog", effects: { woman: 2 } },
+            { label: "parrot that repeats nonsense", effects: { ququeque: 2 } },
+            { label: "car (it's alive now)", effects: { joe: 2, woman: 1 } }
+          ]
+        },
+        {
+          id: "q16",
+          text: "Your phone battery is at 1%.",
+          choices: [
+            { label: "charge it asap", effects: { normal: 2 } },
+            { label: "laugh maniacally as it dies", effects: { evil: 2 } },
+            { label: "use it until it dies mid-scroll", effects: { fast: 2 } },
+            { label: "text friends a heart before it dies", effects: { woman: 2 } },
+            { label: "sketch something offline", effects: { ququeque: 2 } },
+            { label: "blame the car crash again", effects: { joe: 2 } }
+          ]
+        },
+        {
+          id: "q17",
+          text: "Final question: What's your destiny?",
+          choices: [
+            { label: "live chill and happy", effects: { normal: 2 } },
+            { label: "rule the world with chaos", effects: { evil: 2 } },
+            { label: "break every speed limit", effects: { fast: 2 } },
+            { label: "be iconic forever", effects: { woman: 2 } },
+            { label: "create something new", effects: { ququeque: 2 } },
+            { label: "crash... one last time", effects: { joe: 3 } }
+          ]
+        }
       ]
     };
 
     let idx = 0;
     const answers = {};
 
-    function renderQuestion(){
+    CFG.questions = CFG.questions.sort(i => 0.5 - Math.random());
+    
+    function renderQuestion() {
       const q = CFG.questions[idx];
       if (!q) return;
       byId('qtext').textContent = q.text;
-      byId('progress').textContent = 'Question ' + (idx+1) + ' / ' + CFG.questions.length;
+      byId('progress').textContent = 'Question ' + (idx + 1) + ' / ' + CFG.questions.length;
       const form = byId('qform');
       form.innerHTML = '';
-      q.choices.forEach((c, i) => {
+      q.choices.sort(i => 0.5 - Math.random()).forEach((c, i) => {
         const id = q.id + '_' + i;
         const label = document.createElement('label');
         const input = document.createElement('input');
@@ -123,23 +264,23 @@
       byId('submit').hidden = idx !== CFG.questions.length - 1;
     }
 
-    function scoreResults(){
+    function scoreResults() {
       const score = {};
       CFG.outcomes.forEach(o => score[o.id] = 0);
       CFG.questions.forEach(q => {
         const i = answers[q.id];
         if (i == null) return;
         const effects = (q.choices[i] && q.choices[i].effects) || {};
-        for (const k in effects){ score[k] = (score[k] || 0) + Number(effects[k]); }
+        for (const k in effects) { score[k] = (score[k] || 0) + Number(effects[k]); }
       });
       const totals = Object.entries(score).map(([id, val]) => ({ id, score: val }));
-      totals.sort((a,b) => b.score - a.score);
+      totals.sort((a, b) => b.score - a.score);
       const topScore = totals.length ? totals[0].score : 0;
       let winners = totals.filter(t => t.score === topScore);
       return { totals, winners };
     }
 
-    function renderResults(){
+    function renderResults() {
       const { totals, winners } = scoreResults();
       const byIdMap = {}; CFG.outcomes.forEach(o => byIdMap[o.id] = o);
       const div = byId('results');
@@ -154,6 +295,7 @@
         const h3 = document.createElement('h3'); h3.textContent = o.name;
         const p = document.createElement('p'); p.textContent = o.description;
         const img = document.createElement('img'); img.src = `/images/${o.id}.png`;
+        img.height = 300;
         div.appendChild(h3); div.appendChild(p); div.appendChild(img);
       });
 
@@ -167,23 +309,24 @@
     }
 
     byId('start').onclick = () => { idx = 0; for (const k in answers) delete answers[k]; byId('pre').hidden = true; byId('qwrap').hidden = false; renderQuestion(); };
-    byId('prev').onclick = () => { if (idx>0){ idx--; renderQuestion(); } };
+    byId('prev').onclick = () => { if (idx > 0) { idx--; renderQuestion(); } };
     byId('next').onclick = () => {
       const q = CFG.questions[idx];
       const form = byId('qform');
       const checked = form.querySelector('input[type=radio]:checked');
-      if (!checked){ alert('OwO, whats dis? pick an option!'); return; }
+      if (!checked) { alert('OwO, whats dis? pick an option!'); return; }
       answers[q.id] = Number(checked.value);
-      if (idx < CFG.questions.length - 1){ idx++; renderQuestion(); }
+      if (idx < CFG.questions.length - 1) { idx++; renderQuestion(); }
     };
     byId('submit').onclick = () => {
       const q = CFG.questions[idx];
       const form = byId('qform');
       const checked = form.querySelector('input[type=radio]:checked');
-      if (!checked){ alert('OwO, whats dis? pick an option!'); return; }
+      if (!checked) { alert('OwO, whats dis? pick an option!'); return; }
       answers[q.id] = Number(checked.value);
       renderResults();
     };
   </script>
 </body>
+
 </html>
